@@ -11,14 +11,14 @@ app.use(
 );
 app.use(express.json());
 
-app.get('/', (req, res)=>{
-    res.json({
-    "slackUsername": "atanda0x",
-    "backend": true,
-    "age": 20,
-    "bio": "backend engineer"
-    })
-})
+// app.get('/', (req, res)=>{
+//     res.json({
+//     "slackUsername": "atanda0x",
+//     "backend": true,
+//     "age": 20,
+//     "bio": "backend engineer"
+//     })
+// })
 
 const Enum = Object.freeze({
     subtraction: "subtraction",
@@ -26,7 +26,7 @@ const Enum = Object.freeze({
     multiplication: "multiplication",
 });
 
-app.post('/post', (req, res) => {
+app.post('/', (req, res) => {
     const { x, y, operation_type } = req.body;
     const operation_types = ["addition", "subtraction", "multiplication"];
     if (!operation_types.includes(operation_type)) {
